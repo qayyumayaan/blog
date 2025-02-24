@@ -1,0 +1,10 @@
+site_name: Ayaan's Blog
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Pi Guide:
+      - Part 1: pi-guide/part1.md
+      - Part 2: pi-guide/part2.md
+      - Part 3: pi-guide/part3.md
+      - Useful Commands: pi-guide/useful_commands.md

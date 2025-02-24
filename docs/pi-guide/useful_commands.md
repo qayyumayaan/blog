@@ -1,5 +1,7 @@
 # Useful Commands
-The following are some useful commands to use in Kali, Raspbian, and Debian. 
+
+The following are some useful commands to use in Kali, Raspbian, and Debian.
+
 | Command Description                              | Command |
 |-------------------------------------------------|---------|
 | See IP                                          | `ifconfig` |
