@@ -1,0 +1,6 @@
+title: "Ayaan's Blog"
+description: "A collection of blogs guides"
+theme: jekyll-theme-cayman
+markdown: kramdown
+url: "https://qayyumayaan.dev"
+baseurl: ""
