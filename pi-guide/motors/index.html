@@ -521,7 +521,12 @@ git clone https://github.com/hransom528/ECECapstoneProject.git
 <pre><code class="language-bash">python3 -m venv myvenv
 source myvenv/bin/activate
 </code></pre>
-<p>You should see a <code>(myenv)</code> at the beginning of your terminal. </p>
+<p>You should see a <code>(myvenv)</code> at the beginning of your terminal. For example, something like this: </p>
+<pre><code class="language-bash">(myvenv) kali@kali-raspberry-pi-zero-2-w:~$
+</code></pre>
+<p>To reactivate your python environment, use this command: </p>
+<pre><code class="language-bash">source ~Desktop/myvenv/bin/activate
+</code></pre>
 <p>Now install the dependencies with: </p>
 <pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools -y
 pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
@@ -530,6 +535,10 @@ pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
 <p>Navigate to the proper directory:</p>
 <pre><code class="language-bash">cd ECECapstoneProject
 </code></pre>
+<p>To pull the latest updates from the repo, run this commmand:</p>
+<pre><code class="language-bash">git -C ~/Desktop/ECECapstoneProject pull
+</code></pre>
+<p>Note: It will overwrite any uncommitted changes made, so keep that in mind. </p>
 <p>Now you can run the code! Let's run the <code>control_movement.py</code> in the <code>motor-control</code> directory: </p>
 <pre><code class="language-bash">python3 motor-control/control_movement.py
 </code></pre>
@@ -561,11 +570,6 @@ pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
-  
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
