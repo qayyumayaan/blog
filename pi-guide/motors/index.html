@@ -527,18 +527,26 @@ source myvenv/bin/activate
 <p>To reactivate your python environment, use this command: </p>
 <pre><code class="language-bash">source ~Desktop/myvenv/bin/activate
 </code></pre>
-<p>Now install the dependencies with: </p>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools -y
-pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
+<p>To automatically enable your Python environment on startup, run this command:</p>
+<pre><code class="language-bash">echo &quot;source ~/Desktop/myvenv/bin/activate&quot; &gt;&gt; ~/.zshrc
 </code></pre>
-<h2 id="3-run-the-code">3) Run the code</h2>
-<p>Navigate to the proper directory:</p>
-<pre><code class="language-bash">cd ECECapstoneProject
-</code></pre>
+<p>If you're using a different shell (like <code>bash</code>), replace <code>.zshrc</code> with <code>.bashrc</code>.  </p>
 <p>To pull the latest updates from the repo, run this commmand:</p>
 <pre><code class="language-bash">git -C ~/Desktop/ECECapstoneProject pull
 </code></pre>
 <p>Note: It will overwrite any uncommitted changes made, so keep that in mind. </p>
+<p>To automate this with a command called "updateproject", run this: </p>
+<pre><code class="language-bash">alias updateproject='git -C ~/Desktop/ECECapstoneProject pull'
+</code></pre>
+<p>Now install the dependencies with: </p>
+<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools aircrack-ng wireshark net-tools nmap -y
+pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
+</code></pre>
+<p>This command is going to take a while, so be patient. </p>
+<h2 id="3-run-the-code">3) Run the code</h2>
+<p>Navigate to the proper directory:</p>
+<pre><code class="language-bash">cd ECECapstoneProject
+</code></pre>
 <p>Now you can run the code! Let's run the <code>control_movement.py</code> in the <code>motor-control</code> directory: </p>
 <pre><code class="language-bash">python3 motor-control/control_movement.py
 </code></pre>

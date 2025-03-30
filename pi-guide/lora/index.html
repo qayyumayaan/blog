@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../part1/">
-      
-      
-        <link rel="next" href="../part3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Part 2 - Ayaan's Blog</title>
+        <title>Lora - Ayaan's Blog</title>
       
     
     
@@ -61,11 +57,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#raspberry-pi-guide-part-23-usb-serial" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part 2
+              Lora
             
           </span>
         </div>
@@ -209,19 +200,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -236,7 +225,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Pi Guide
@@ -269,31 +258,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Part 2
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../part2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -303,62 +271,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-disable-gui" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Disable GUI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-optional-disable-wait-for-network-on-boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) (optional) Disable wait for network on boot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-edit-your-cmdlinetxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Edit your cmdline.txt:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-edit-your-configtxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Edit your config.txt
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -454,52 +366,6 @@
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-disable-gui" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Disable GUI
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-optional-disable-wait-for-network-on-boot" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) (optional) Disable wait for network on boot
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-edit-your-cmdlinetxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Edit your cmdline.txt:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-edit-your-configtxt" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Edit your config.txt
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
   
 </nav>
                   </div>
@@ -515,113 +381,9 @@
 
 
 
-<h1 id="raspberry-pi-guide-part-23-usb-serial">Raspberry Pi Guide Part 2/3: USB Serial</h1>
-<p>By Ayaan 2-24-25
-Part 2/3</p>
-<p>So you just got your Linux install. Now what?</p>
-<p>The goal of this step is to enable USB Serial, allowing direct communication between your PC and your Pi Zero 2W. You can then SSH into your Pi locally without any dependencies on Wifi. </p>
-<p><strong>USB Serial Mode</strong> allows you to connect your pi directly to your computer using the second (data) MicroUSB port. 
-<strong>"Regular" Mode</strong> is the normal configuration where you can plug in a power source, keyboard, and HDMI and use your Pi as normal. 
-One limitation of USB Serial Mode is that you cannot plug in a keyboard and your computer at the same time since it uses the same physical port. You need either a USB to TTL adapter and use the pins or a USB OTG adapter. </p>
-<p>This guide is tailored for enabling USB Serial mode as an option to have. This guide will let you switch between USB Serial mode and Regular Mode. It may not suit your usecase. </p>
-<p>This was tested on Kali Linux, which is based on Debian. Since Raspbian is also based on Debian, it should also work there, but I have not tested it.  </p>
-<h2 id="1-disable-gui">1) Disable GUI</h2>
-<p>You can change this in <code>raspi-config</code></p>
-<pre><code class="language-bash">sudo systemctl set-default multi-user.target
-</code></pre>
-<p>To reenable GUI on boot, use raspi-config.</p>
-<p>To start the GUI in the CLI, run: </p>
-<pre><code class="language-bash">sudo startx &amp;
-</code></pre>
-<h2 id="2-optional-disable-wait-for-network-on-boot">2) (optional) Disable wait for network on boot</h2>
-<pre><code class="language-bash">sudo systemctl disable systemd-networkd-wait-online.service
-sudo reboot
-</code></pre>
-<h2 id="4-edit-your-cmdlinetxt">4) Edit your <code>cmdline.txt</code>:</h2>
-<p>Run this command to edit your <code>cmdline.txt</code>: </p>
-<pre><code class="language-bash">sudo nano /boot/cmdline.txt
-</code></pre>
-<p>Then add this to your <code>cmdline.txt</code> right after the <code>rootwait</code>: </p>
-<pre><code class="language-bash">modules-load=dwc2,g_serial
-</code></pre>
-<h2 id="5-edit-your-configtxt">5) Edit your <code>config.txt</code></h2>
-<p>Run this command to edit your <code>config.txt</code>:</p>
-<pre><code class="language-bash">sudo nano /boot/config.txt
-</code></pre>
-<p>Add this to the top or bottom of your <code>config.txt</code> and ideally remove the rest of the settings that you don't need. Make sure what you already have in your <code>config.txt</code> does not conflict with this!</p>
-<pre><code class="language-bash"># SETTINGS FOR USB SERIAL OR REGULAR MODE
-# Please enable or disable the other to use a particular mode. 
+  <h1>Lora</h1>
 
-# ENABLE FOR USB SERIAL
-dtoverlay=dwc2
-start_x=1
-
-# ENABLE FOR REGULAR MODE
-# dr_mode=peripheral
-
-# Lower output resolution to 1/4th of 1080p
-framebuffer_width=960
-framebuffer_height=540
-
-hdmi_force_hotplug=1
-disable_overscan=1
-</code></pre>
-<p>Once you're finished, just shut down and connect your Pi to your computer via the Data port on the Pi Zero 2W. Serial Mode should be set up already, but if you're having trouble, try connecting your Pi to the network and SSHing into it. </p>
-<p>The getty communication service for USB serial should already be running, but ensure it is with: </p>
-<pre><code class="language-bash">sudo systemctl restart serial-getty@ttyGS0.service
-</code></pre>
-<p>check if it is running with: </p>
-<pre><code class="language-bash">sudo systemctl status serial-getty@ttyGS0.service
-</code></pre>
-<p>It should say enabled in green. </p>
-<h1 id="connecting-to-your-computer">Connecting to your Computer</h1>
-<p>It is actually pretty straightforward on a Mac. On Windows, you will need PuTTY. Use Device Manager to check the name of the device, maybe it will be listed as <code>COM6</code>. Then use PuTTY to connect. Below are the instructions for MacOS:</p>
-<h2 id="1-plug-the-micro-usb-data-cable-to-the-second-micro-usb-port">1) Plug the Micro USB data cable to the second Micro USB port.</h2>
-<p>Plug this into your Mac. Having a display is optional. </p>
-<h2 id="2-run-the-following-command-on-your-computer-to-see-if-your-computer-recognizes-the-pi">2) Run the following command on your computer to see if your computer recognizes the Pi:</h2>
-<pre><code class="language-bash">ls /dev/cu.usbmodem*
-</code></pre>
-<p>Try also running this command if the above is giving issues: </p>
-<pre><code class="language-bash">ls /dev/*.*
-</code></pre>
-<p>You should see something like this listed: </p>
-<pre><code class="language-bash">(base) root@computer ~ % ls /dev/cu.usbmodem*              
-
-/dev/cu.usbmodem11201
-</code></pre>
-<p>This Raspberry Pi is identified as <code>cu.usbmodem11201</code>. </p>
-<h2 id="3-to-connect-to-your-pi-run-this-command">3) To connect to your Pi, run this command.</h2>
-<p>Make sure to change the numbers to match yours.</p>
-<pre><code class="language-bash">screen /dev/cu.usbmodem2101 115200
-</code></pre>
-<p>Now it should ask you to connect. Type in <code>kali</code>, then <code>kali</code> as username and password if you did not change the default username or password. </p>
-<h3 id="now-you-are-connected-to-your-pi-via-usb-serial">Now you are connected to your Pi via USB Serial!</h3>
-<p>A major limitation is that you cannot directly control the Pi because the one data port is taken up. You need a USB OTG hub for this to work. In order to undo this and be able to run in "normal" mode where you can plug in the power to the power port and plug in a keyboard like normal, you must change your <code>config.txt</code> to match this snippet: </p>
-<p>USB Serial Mode: </p>
-<pre><code class="language-bash">## SETTINGS FOR USB SERIAL OR REGULAR MODE
-## Please enable or disable the other to use a particular mode. 
-
-## ENABLE FOR USB SERIAL
-dtoverlay=dwc2
-start_x=1
-
-## ENABLE FOR REGULAR MODE
-## dr_mode=peripheral
-</code></pre>
-<p>Regular Mode: </p>
-<pre><code class="language-bash">## SETTINGS FOR USB SERIAL OR REGULAR MODE
-## Please enable or disable the other to use a particular mode. 
-
-## ENABLE FOR USB SERIAL
-## dtoverlay=dwc2
-## start_x=1
-
-## ENABLE FOR REGULAR MODE
-dr_mode=peripheral
-</code></pre>
-<p>USB Serial has an identical experience to SSHing over a network. However, there is significantly less lag and you have a lot more free memory. </p>
-<h2 id="and-youre-done">And you're done!</h2>
-<p>Now you have a Raspberry Pi that you can SSH into locally!</p>
+<p>Mu Python Editor for an ESP32. </p>
 
 
 
