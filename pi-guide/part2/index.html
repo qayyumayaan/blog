@@ -544,6 +544,9 @@ sudo reboot
 <p>Then add this to your <code>cmdline.txt</code> right after the <code>rootwait</code>: </p>
 <pre><code class="language-bash">modules-load=dwc2,g_serial
 </code></pre>
+<p>Here is your entire cmdline.txt:</p>
+<pre><code class="language-bash">console=serial0,115200 console=tty1 root=PARTUUID=fc6ea92b-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_serial net.ifnames=0 ds=nocloud cfg80211.ieee80211_regdom=US
+</code></pre>
 <h2 id="5-edit-your-configtxt">5) Edit your <code>config.txt</code></h2>
 <p>Run this command to edit your <code>config.txt</code>:</p>
 <pre><code class="language-bash">sudo nano /boot/config.txt
@@ -595,6 +598,39 @@ disable_overscan=1
 <pre><code class="language-bash">screen /dev/cu.usbmodem2101 115200
 </code></pre>
 <p>Now it should ask you to connect. Type in <code>kali</code>, then <code>kali</code> as username and password if you did not change the default username or password. </p>
+<p>Note: If you are getting stuck at actually seeing and interacting with the Pi with Minicom or Screen, try to see if the serial-getty service above is actually running. If it says something along the lines of the following: </p>
+<pre><code class="language-zsh">$ sudo systemctl status serial-getty@ttyGS0.service
+
+ serial-getty@ttyGS0.service - Serial Getty on ttyGS0
+     Loaded: loaded (/usr/lib/systemd/system/serial-getty&gt;
+     Active: inactive (dead)
+       Docs: man:agetty(8)
+</code></pre>
+<p>But then says it is working after running this command: </p>
+<pre><code class="language-bash">sudo systemctl restart serial-getty@ttyGS0.service
+</code></pre>
+<p>Try creating a service that auto reactivates the service. Just run these two lines: </p>
+<pre><code class="language-zsh">sudo tee /etc/systemd/system/usb-gadget.service &gt; /dev/null &lt;&lt;'EOF'
+[Unit]
+Description=USB Gadget setup
+Before=serial-getty@ttyGS0.service
+Wants=serial-getty@ttyGS0.service
+DefaultDependencies=no
+After=local-fs.target
+Before=sysinit.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/setup_usb_gadget.sh
+RemainAfterExit=yes
+
+[Install]
+WantedBy=sysinit.target
+EOF
+</code></pre>
+<pre><code class="language-zsh">sudo systemctl enable usb-gadget.service
+</code></pre>
+<p>Now it should just work. </p>
 <h3 id="now-you-are-connected-to-your-pi-via-usb-serial">Now you are connected to your Pi via USB Serial!</h3>
 <p>A major limitation is that you cannot directly control the Pi because the one data port is taken up. You need a USB OTG hub for this to work. In order to undo this and be able to run in "normal" mode where you can plug in the power to the power port and plug in a keyboard like normal, you must change your <code>config.txt</code> to match this snippet: </p>
 <p>USB Serial Mode: </p>

@@ -503,52 +503,60 @@
 <h2 id="1-pull-the-files-from-github">1) Pull the files from GitHub</h2>
 <p>For our project, the files are located on GitHub at this <a href="https://github.com/hransom528/ECECapstoneProject">link</a>. </p>
 <p>Make sure Git is installed.</p>
-<pre><code class="language-bash">sudo apt update
+<pre><code class="language-zsh">sudo apt update
 sudo apt install git -y
 </code></pre>
 <p>Navigate to the repository you want to clone the files to. Clone the Git repository. Here we will copy it to Desktop. </p>
-<pre><code class="language-bash">cd ~/Desktop
+<pre><code class="language-zsh">cd ~/Desktop
 git clone https://github.com/hransom528/ECECapstoneProject.git
 </code></pre>
 <h2 id="2-install-python-dependencies">2) Install Python dependencies</h2>
 <p>Be sure that Python is installed with:</p>
-<pre><code class="language-bash">sudo apt install python3 python3-venv python3-pip -y
+<pre><code class="language-zsh">sudo apt install python3 python3-venv python3-pip -y
 </code></pre>
 <p>Check if Python is installed with:</p>
-<pre><code class="language-bash">python3 --version
+<pre><code class="language-zsh">python3 --version
 </code></pre>
 <p>We can create and then activate a virtual Python environment called <code>myvenv</code> to install our dependencies. </p>
-<pre><code class="language-bash">python3 -m venv myvenv
+<pre><code class="language-zsh">python3 -m venv myvenv
 source myvenv/bin/activate
 </code></pre>
 <p>You should see a <code>(myvenv)</code> at the beginning of your terminal. For example, something like this: </p>
-<pre><code class="language-bash">(myvenv) kali@kali-raspberry-pi-zero-2-w:~$
+<pre><code class="language-zsh">(myvenv) kali@kali-raspberry-pi-zero-2-w:~$
 </code></pre>
 <p>To reactivate your python environment, use this command: </p>
-<pre><code class="language-bash">source ~Desktop/myvenv/bin/activate
+<pre><code class="language-zsh">source ~Desktop/myvenv/bin/activate
 </code></pre>
 <p>To automatically enable your Python environment on startup, run this command:</p>
-<pre><code class="language-bash">echo &quot;source ~/Desktop/myvenv/bin/activate&quot; &gt;&gt; ~/.zshrc
+<pre><code class="language-zsh">echo &quot;source ~/Desktop/myvenv/bin/activate&quot; &gt;&gt; ~/.zshrc
 </code></pre>
-<p>If you're using a different shell (like <code>bash</code>), replace <code>.zshrc</code> with <code>.bashrc</code>.  </p>
+<p>If you're using a different shell (like <code>zsh</code>), replace <code>.zshrc</code> with <code>.zshrc</code>.  </p>
 <p>To pull the latest updates from the repo, run this commmand:</p>
-<pre><code class="language-bash">git -C ~/Desktop/ECECapstoneProject pull
+<pre><code class="language-zsh">git -C ~/Desktop/ECECapstoneProject pull
 </code></pre>
 <p>Note: It will overwrite any uncommitted changes made, so keep that in mind. </p>
 <p>To automate this with a command called "updateproject", run this: </p>
-<pre><code class="language-bash">alias updateproject='git -C ~/Desktop/ECECapstoneProject pull'
+<pre><code class="language-zsh">echo &quot;alias updateproject='git -C ~/Desktop/ECECapstoneProject pull'&quot; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
 </code></pre>
 <p>Now install the dependencies with: </p>
-<pre><code class="language-bash">sudo apt-get update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools aircrack-ng wireshark net-tools nmap -y
-pip3 install adafruit-blinka adafruit-circuitpython-motorkit RPi.GPIO
+<pre><code class="language-zsh">sudo apt-get update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools aircrack-ng wireshark net-tools nmap -y
+pip3 install adafruit-blinka adafruit-circuitpython-motorkit adafruit-circuitpython-rfm9x RPi.GPIO 
 </code></pre>
 <p>This command is going to take a while, so be patient. </p>
 <h2 id="3-run-the-code">3) Run the code</h2>
 <p>Navigate to the proper directory:</p>
-<pre><code class="language-bash">cd ECECapstoneProject
+<pre><code class="language-zsh">cd ECECapstoneProject
 </code></pre>
 <p>Now you can run the code! Let's run the <code>control_movement.py</code> in the <code>motor-control</code> directory: </p>
-<pre><code class="language-bash">python3 motor-control/control_movement.py
+<pre><code class="language-zsh">python3 motor-control/control_movement.py
+</code></pre>
+<p>To automate this, use this alias: </p>
+<pre><code class="language-zsh">echo &quot;alias runproject='python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py'&quot; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
+
+alias runproject='python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py'
+</code></pre>
+<p>To remove all local changes on Git and then refresh from master, use this command:</p>
+<pre><code class="language-zsh">git reset --hard HEAD
 </code></pre>
 
 
