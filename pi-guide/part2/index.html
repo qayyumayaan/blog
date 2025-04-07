@@ -597,6 +597,9 @@ disable_overscan=1
 <p>Make sure to change the numbers to match yours.</p>
 <pre><code class="language-bash">screen /dev/cu.usbmodem2101 115200
 </code></pre>
+<p>You can also use minicom in a very similar way (you have to install it first):</p>
+<pre><code class="language-zsh">minicom --device /dev/cu.usbmodem2101 --baudrate 115200
+</code></pre>
 <p>Now it should ask you to connect. Type in <code>kali</code>, then <code>kali</code> as username and password if you did not change the default username or password. </p>
 <p>Note: If you are getting stuck at actually seeing and interacting with the Pi with Minicom or Screen, try to see if the serial-getty service above is actually running. If it says something along the lines of the following: </p>
 <pre><code class="language-zsh">$ sudo systemctl status serial-getty@ttyGS0.service
