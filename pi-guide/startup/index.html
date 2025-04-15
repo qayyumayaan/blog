@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../part3/">
+        <link rel="prev" href="../motors/">
       
       
-        <link rel="next" href="../startup/">
+        <link rel="next" href="../useful_commands/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>Motors - Ayaan's Blog</title>
+        <title>Startup - Ayaan's Blog</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raspberry-pi-zero-2w-guide-controlling-the-motors" class="md-skip">
+        <a href="#raspberry-pi-zero-2w-guide-running-the-project-on-startup" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Motors
+              Startup
             
           </span>
         </div>
@@ -313,6 +313,28 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../motors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -329,7 +351,7 @@
           
   
   <span class="md-ellipsis">
-    Motors
+    Startup
     
   </span>
   
@@ -341,7 +363,7 @@
         
   
   <span class="md-ellipsis">
-    Motors
+    Startup
     
   </span>
   
@@ -364,27 +386,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-pull-the-files-from-github" class="md-nav__link">
+  <a href="#step-1-create-the-service-file" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Pull the files from GitHub
+      Step 1: Create the Service File
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-install-python-dependencies" class="md-nav__link">
+  <a href="#step-2-enable-and-start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Install Python dependencies
+      Step 2: Enable and Start the Service
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-run-the-code" class="md-nav__link">
+  <a href="#step-3-stop-the-service-on-login" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Run the code
+      Step 3: Stop the Service on Login
     </span>
   </a>
   
@@ -394,28 +416,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../startup/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Startup
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -477,27 +477,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-pull-the-files-from-github" class="md-nav__link">
+  <a href="#step-1-create-the-service-file" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Pull the files from GitHub
+      Step 1: Create the Service File
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-install-python-dependencies" class="md-nav__link">
+  <a href="#step-2-enable-and-start-the-service" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Install Python dependencies
+      Step 2: Enable and Start the Service
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-run-the-code" class="md-nav__link">
+  <a href="#step-3-stop-the-service-on-login" class="md-nav__link">
     <span class="md-ellipsis">
-      3) Run the code
+      Step 3: Stop the Service on Login
     </span>
   </a>
   
@@ -519,67 +519,70 @@
 
 
 
-<h1 id="raspberry-pi-zero-2w-guide-controlling-the-motors">Raspberry Pi Zero 2W Guide: Controlling the Motors</h1>
-<p>By Ayaan 3-10-25</p>
-<p>This guide goes into the steps needed to enable I2C to be able to control motors from the Raspberry Pi. </p>
-<h2 id="1-pull-the-files-from-github">1) Pull the files from GitHub</h2>
-<p>For our project, the files are located on GitHub at this <a href="https://github.com/hransom528/ECECapstoneProject">link</a>. </p>
-<p>Make sure Git is installed.</p>
-<pre><code class="language-zsh">sudo apt update
-sudo apt install git -y
-</code></pre>
-<p>Navigate to the repository you want to clone the files to. Clone the Git repository. Here we will copy it to Desktop. </p>
-<pre><code class="language-zsh">cd ~/Desktop
-git clone https://github.com/hransom528/ECECapstoneProject.git
-</code></pre>
-<h2 id="2-install-python-dependencies">2) Install Python dependencies</h2>
-<p>Be sure that Python is installed with:</p>
-<pre><code class="language-zsh">sudo apt install python3 python3-venv python3-pip -y
-</code></pre>
-<p>Check if Python is installed with:</p>
-<pre><code class="language-zsh">python3 --version
-</code></pre>
-<p>We can create and then activate a virtual Python environment called <code>myvenv</code> to install our dependencies. </p>
-<pre><code class="language-zsh">python3 -m venv myvenv
-source myvenv/bin/activate
-</code></pre>
-<p>You should see a <code>(myvenv)</code> at the beginning of your terminal. For example, something like this: </p>
-<pre><code class="language-zsh">(myvenv) kali@kali-raspberry-pi-zero-2-w:~$
-</code></pre>
-<p>To reactivate your python environment, use this command: </p>
-<pre><code class="language-zsh">source ~Desktop/myvenv/bin/activate
-</code></pre>
-<p>To automatically enable your Python environment on startup, run this command:</p>
-<pre><code class="language-zsh">echo &quot;source ~/Desktop/myvenv/bin/activate&quot; &gt;&gt; ~/.zshrc
-</code></pre>
-<p>If you're using a different shell (like <code>zsh</code>), replace <code>.zshrc</code> with <code>.zshrc</code>.  </p>
-<p>To pull the latest updates from the repo, run this commmand:</p>
-<pre><code class="language-zsh">git -C ~/Desktop/ECECapstoneProject pull
-</code></pre>
-<p>Note: It will overwrite any uncommitted changes made, so keep that in mind. </p>
-<p>To automate this with a command called "updateproject", run this: </p>
-<pre><code class="language-zsh">echo &quot;alias updateproject='git -C ~/Desktop/ECECapstoneProject pull'&quot; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
-</code></pre>
-<p>Now install the dependencies with: </p>
-<pre><code class="language-zsh">sudo apt-get update &amp;&amp; sudo apt install python3-pip python3-smbus i2c-tools aircrack-ng wireshark net-tools nmap -y
-pip3 install adafruit-blinka adafruit-circuitpython-motorkit adafruit-circuitpython-rfm9x RPi.GPIO pypng 
-</code></pre>
-<p>This command is going to take a while, so be patient. </p>
-<h2 id="3-run-the-code">3) Run the code</h2>
-<p>Navigate to the proper directory:</p>
-<pre><code class="language-zsh">cd ECECapstoneProject
-</code></pre>
-<p>Now you can run the code! Let's run the <code>control_movement.py</code> in the <code>motor-control</code> directory: </p>
-<pre><code class="language-zsh">python3 motor-control/control_movement.py
-</code></pre>
-<p>To automate this, use this alias: </p>
-<pre><code class="language-zsh">echo &quot;alias runproject='python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py'&quot; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
-
-alias runproject='python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py'
-</code></pre>
-<p>To remove all local changes on Git and then refresh from master, use this command:</p>
-<pre><code class="language-zsh">git reset --hard HEAD
-</code></pre>
+<h1 id="raspberry-pi-zero-2w-guide-running-the-project-on-startup">Raspberry Pi Zero 2W Guide: Running the Project on Startup</h1>
+<p>By Omar Hamoudeh 4/14/25</p>
+<p>This guide goes into detail on how to create a system service that will automatically run the project on startup. It is achieved by creating a system service. </p>
+<h3 id="step-1-create-the-service-file">Step 1: Create the Service File</h3>
+<ol>
+<li>
+<p>Open a Text Editor with Root Privileges:
+    <code>zsh
+    sudo nano /etc/systemd/system/runproject.service</code></p>
+</li>
+<li>
+<p>Enter the Following Content:
+    ```ini
+    # This service runs the runproject at boot using the Python interpreter from the virtual environment.
+    [Unit]
+    Description=Run runproject at boot
+    After=network.target</p>
+<p>[Service]
+User=kali
+Type=simple
+ExecStart=/home/kali/Desktop/myvenv/bin/python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure</p>
+<p>[Install]
+WantedBy=multi-user.target
+```</p>
+</li>
+</ol>
+<h3 id="step-2-enable-and-start-the-service">Step 2: Enable and Start the Service</h3>
+<ol>
+<li>
+<p>Reload systemd to pick up the new service:
+    <code>zsh
+    sudo systemctl daemon-reload</code></p>
+</li>
+<li>
+<p>Enable the service to start at boot:
+    <code>zsh
+    sudo systemctl enable runproject.service</code></p>
+</li>
+</ol>
+<h3 id="step-3-stop-the-service-on-login">Step 3: Stop the Service on Login</h3>
+<p>To avoid having the service running in the background while you are logged in, add a command to stop it in your login shell configuration.</p>
+<ol>
+<li>
+<p>Open your login configuration file:
+    <code>zsh
+    nano ~/.zprofile</code>
+   <em>(If you’re using Bash, consider editing <code>~/.bash_profile</code> or <code>~/.profile</code>.)</em></p>
+</li>
+<li>
+<p>Add the following lines at the end of the file:
+    <code>zsh
+    sudo systemctl stop runproject.service</code></p>
+</li>
+<li>
+<p>Save and close the file.</p>
+</li>
+<li>
+<p><strong>Troubleshooting:</strong><br />
+  Always verify service status with <code>sudo systemctl status runproject.service</code> to help debug any issues.</p>
+</li>
+</ol>
 
 
 
