@@ -578,7 +578,10 @@ pip3 install adafruit-blinka adafruit-circuitpython-motorkit adafruit-circuitpyt
 alias runproject='python3 /home/kali/Desktop/ECECapstoneProject/rover_code/main.py'
 </code></pre>
 <p>To remove all local changes on Git and then refresh from master, use this command:</p>
-<pre><code class="language-zsh">git reset --hard HEAD
+<pre><code class="language-zsh">git -C ~/Desktop/ECECapstoneProject reset --hard HEAD &amp;&amp; git -C ~/Desktop/ECECapstoneProject clean -fd
+</code></pre>
+<p>To automate this, make this an alias called <code>resetproject</code>:</p>
+<pre><code class="language-zsh">echo &quot;alias resetproject='git -C ~/Desktop/ECECapstoneProject reset --hard HEAD &amp;&amp; git -C ~/Desktop/ECECapstoneProject clean -fd'&quot; &gt;&gt; ~/.zshrc &amp;&amp; source ~/.zshrc
 </code></pre>
 
 
