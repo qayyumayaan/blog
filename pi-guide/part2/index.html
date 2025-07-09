@@ -628,8 +628,9 @@ sudo reboot
 <p>Run this command to edit your <code>cmdline.txt</code>: </p>
 <pre><code class="language-bash">sudo nano /boot/cmdline.txt
 </code></pre>
+<p>NOTE: Newer versions of Raspbian have moved the configuration files <code>cmdline.txt</code> and <code>config.txt</code> to <code>/boot/firmware/</code>.</p>
 <p>Then add this to your <code>cmdline.txt</code> right after the <code>rootwait</code>: </p>
-<pre><code class="language-bash">modules-load=dwc2,g_serial
+<pre><code class="language-bash">modules-load=dwc2,g_serial net.ifnames=0 ds=nocloud
 </code></pre>
 <p>Here is your entire cmdline.txt:</p>
 <pre><code class="language-bash">console=serial0,115200 console=tty1 root=PARTUUID=fc6ea92b-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_serial net.ifnames=0 ds=nocloud cfg80211.ieee80211_regdom=US
@@ -638,6 +639,7 @@ sudo reboot
 <p>Run this command to edit your <code>config.txt</code>:</p>
 <pre><code class="language-bash">sudo nano /boot/config.txt
 </code></pre>
+<p>NOTE: Newer versions of Raspbian have moved the configuration files <code>cmdline.txt</code> and <code>config.txt</code> to <code>/boot/firmware/</code>.</p>
 <p>Add this to the top or bottom of your <code>config.txt</code> and ideally remove the rest of the settings that you don't need. Make sure what you already have in your <code>config.txt</code> does not conflict with this!</p>
 <pre><code class="language-bash"># SETTINGS FOR USB SERIAL OR REGULAR MODE
 # Please enable or disable the other to use a particular mode. 
