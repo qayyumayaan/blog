@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../..">
-      
-      
-        <link rel="next" href="../part2/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Part 1 - Ayaan's Blog</title>
+        <title>RetroPie on Raspberry Pi Guide - Ayaan's Blog</title>
       
     
     
@@ -62,7 +58,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#raspberry-pi-zero-2w-guide-part-13-imaging" class="md-skip">
+        <a href="#retropie-on-raspberry-pi-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +94,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part 1
+              RetroPie on Raspberry Pi Guide
             
           </span>
         </div>
@@ -209,19 +205,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -236,7 +230,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Pi Guide
@@ -247,31 +241,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Part 1
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../part1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -281,71 +254,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-download-kali-linux-from-the-right-place-do-not-download-the-pi-tail-version" class="md-nav__link">
-    <span class="md-ellipsis">
-      1) Download Kali Linux from the right place. Do not download the Pi-Tail version.
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-download-raspberry-pi-imager" class="md-nav__link">
-    <span class="md-ellipsis">
-      2) Download Raspberry Pi Imager
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-sd-card" class="md-nav__link">
-    <span class="md-ellipsis">
-      3) SD Card
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-flashing" class="md-nav__link">
-    <span class="md-ellipsis">
-      4) Flashing
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-finishing-up" class="md-nav__link">
-    <span class="md-ellipsis">
-      5) Finishing Up
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -451,45 +359,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-download-kali-linux-from-the-right-place-do-not-download-the-pi-tail-version" class="md-nav__link">
+  <a href="#initial-setup" class="md-nav__link">
     <span class="md-ellipsis">
-      1) Download Kali Linux from the right place. Do not download the Pi-Tail version.
+      Initial Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-the-correct-image-for-your-device-at-this-link-httpsretropieorgukdownload" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Download the correct image for your device at this link: https://retropie.org.uk/download/
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#2-download-raspberry-pi-imager" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#2-flash-the-image-on-the-sd-card-with-balenaetcher" class="md-nav__link">
     <span class="md-ellipsis">
-      2) Download Raspberry Pi Imager
+      2) Flash the image on the SD card with BalenaEtcher.
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#3-sd-card" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#3-boot-on-the-pi-for-the-first-time" class="md-nav__link">
     <span class="md-ellipsis">
-      3) SD Card
+      3) Boot on the Pi for the first time.
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#4-flashing" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#4-set-config-files-for-display-output" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Flashing
+      4) Set config files for display output.
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#5-finishing-up" class="md-nav__link">
+  <a href="#emulationstation" class="md-nav__link">
     <span class="md-ellipsis">
-      5) Finishing Up
+      EmulationStation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EmulationStation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-add-your-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Add your games.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-bluetooth-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Bluetooth Controllers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-network-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Network Connectivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Themes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-game-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Game Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-game-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Game Config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In-Game Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10-setting-up-rewind" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Setting up Rewind
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enjoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enjoy!
     </span>
   </a>
   
@@ -511,20 +518,86 @@
 
 
 
-<h1 id="raspberry-pi-zero-2w-guide-part-13-imaging">Raspberry Pi Zero 2W Guide Part 1/3: Imaging</h1>
-<p>By Ayaan 2-24-25
-Part 1/3</p>
-<p>This part goes into flashing the Kali Linux image with Raspberry Pi Imager on a Pi Zero 2W. </p>
-<h2 id="1-download-kali-linux-from-the-right-place-do-not-download-the-pi-tail-version">1) Download Kali Linux from the right place. Do not download the Pi-Tail version.</h2>
-<p><a href="https://www.kali.org/get-kali/#kali-arm">Download Kali Linux for Raspberry Pi</a></p>
-<h2 id="2-download-raspberry-pi-imager">2) Download Raspberry Pi Imager</h2>
-<p><a href="https://www.raspberrypi.com/software/">Download Raspberry Pi Imager</a></p>
-<h2 id="3-sd-card">3) SD Card</h2>
-<p>Please ensure your SD card is at least 16 GB and is reasonably fast and recent. </p>
-<h2 id="4-flashing">4) Flashing</h2>
-<p>Please pick the right Raspberry Pi. In this case, we are using a Pi Zero 2W. Be sure to pick the right storage and right image. When asked to apply OS customization settings, set your <strong>Wifi &amp; region, and enable SSH</strong>. This saves a lot of time later. </p>
-<h2 id="5-finishing-up">5) Finishing Up</h2>
-<p>Once it is done writing, plug it into the Pi. Ideally you should have a USB keyboard and display. You're ready for the next steps!</p>
+<h1 id="retropie-on-raspberry-pi-guide">RetroPie on Raspberry Pi Guide</h1>
+<p>Written by Ayaan Qayyum on 12-25-25
+Prerequisites: a computer, Raspberry Pi, and an SD card (at least 32 GB). Ideally a CRT. I will be using a Pi 4 because of the native analog output. </p>
+<h2 id="initial-setup">Initial Setup</h2>
+<h4 id="1-download-the-correct-image-for-your-device-at-this-link-httpsretropieorgukdownload">1) Download the correct image for your device at this link: https://retropie.org.uk/download/</h4>
+<h4 id="2-flash-the-image-on-the-sd-card-with-balenaetcher">2) Flash the image on the SD card with BalenaEtcher.</h4>
+<h4 id="3-boot-on-the-pi-for-the-first-time">3) Boot on the Pi for the first time.</h4>
+<p>Just let it do its thing for about five minutes. Then unplug it and plug the SD card into your computer. </p>
+<h4 id="4-set-config-files-for-display-output">4) Set config files for display output.</h4>
+<p>Edit the config.txt file to add these at the bottom: </p>
+<pre><code>enable_tvout=1
+
+[pi4]
+# Disable DRM VC4 V3D driver on Pi 4
+dtoverlay=vc4-fkms-v3d
+
+[all]
+# overscan_scale=1
+# hdmi_force_hotplug=1
+# hdmi_group=2
+# hdmi_mode=4
+
+gpu_mem=256
+dtoverlay=disable-bt
+
+# CRT tweaks
+sdtv_mode=0 # Enables NTSC 480i mode. EmulationStation will switch to 240p mode when Retroarch launches.
+sdtv_aspect=1 # 4:3 aspect ratio.
+disable_overscan=1 # We'll handle overscan on a per-system basis with Retroarch.
+audio_pwm_mode=2 # Optional but recommended. Enables an alternative audio driver that works great with the analog audio out.
+#framebuffer_width=580 #To properly use this setting you first need to edit out &quot;-yres 448&quot; on &quot;configs/all/runcommand-onstart.sh&quot; and &quot;-yres 480&quot; on &quot;configs/all/runcommand-onend.sh&quot;. Optional but recommended if you'll only use a crt tv. Adjust the text of the RetroPie config menus.
+#framebuffer_height=360 #To properly use this setting you first need to edit out &quot;-yres 448&quot; on &quot;configs/all/runcommand-onstart.sh&quot; and &quot;-yres 480&quot; on &quot;configs/all/runcommand-onend.sh&quot;. Optional but recommended if you'll only use a crt tv. Adjust the text of the RetroPie config menus.
+#hdmi_group=1 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+#hdmi_mode=2 #Optional. Forces HDMI into 480p mode, useful if you want to emulate a crt tv to test something on an HD display.
+hdmi_ignore_hotplug=1 # Optional. Forces composite tv-out even if HDMI is connected.
+# overscan_left=16
+# overscan_right=16
+disable_audio_dither=1
+disable_splash=1
+</code></pre>
+<p>Restart your Pi and plug in a keyboard or game controller. Now it should boot to the RetroPie GUI. </p>
+<h2 id="emulationstation">EmulationStation</h2>
+<p>Now you should be prompted to set up your controller. You have to set up a wired controller at this stage, or even a keyboard. </p>
+<p>The way I play my games, I always set the hotkey key to the left thumbstick since I use it so often. You can also set it to the Start or Select buttons. </p>
+<h4 id="5-add-your-games">5) Add your games.</h4>
+<p>You can set up a USB drive that automatically copies your games to the Pi's internal storage. To set this up, just plug an empty FAT32 formatted drive to the Pi with a folder in the root called <code>retropie</code>. It will initialize it for you. Put your games in the folders, including the BIOS files if needed. When you then plug it back into the Pi, it will automatically copy. It's super useful to have a drive that has a flashing LED light for when the drive is being used. That way, you can see that when the LED is done flashing, you can safely unplug the drive.</p>
+<p>I made a backup of my RetroPie folder and burned it to a DVD. As I am going through this, I copied the data off the DVD and put it on a freshly formatted drive. </p>
+<p>Once the games are done copying, restart EmulationStation by pressing Start -&gt; Quit -&gt; Restart EmulationStation. All your games should be there. </p>
+<h4 id="6-bluetooth-controllers">6) Bluetooth Controllers</h4>
+<p>You can set up a controller to be used via Bluetooth. To do this, go to "RetroPie -&gt; Bluetooth -&gt; Pair and Connect to Bluetooth Device". It will search for devices. Whatever device you want to connect, search how to put it in pairing mode for this step. </p>
+<p>For the 8BitDo Pro 2, set the mode to "D" then hold the Start and Sync buttons. The Sync button is at the top of the controller near the USB port. Then select the <code>Set up udev rule for Joypad</code>. </p>
+<p>For the DualShock 4, hold the PS button and the Share button (the left one, aka the select button) until the light bar flashes in pulses. </p>
+<p>While the RetroPie is searching for bluetooth devices, you need some device (like a keyboard) to choose it. </p>
+<h4 id="7-network-connectivity">7) Network Connectivity</h4>
+<p>You can also set network connectivity. This can let you set up network play (which I never used) or copy games over the internet (I personally wouldn't do this).</p>
+<h4 id="8-themes">8) Themes</h4>
+<p>The default theme is ok but you can set better themes. You can download it directly with wifi or ethernet connectivity. To get to the themes menu, go to the "RetroPie" option on the homepage (where you went to pair a bluetooth controller).</p>
+<p>My favorite themes are: 
+1. <code>simpler-turtlemini</code>
+2. <code>RetroCRT-240p</code>
+3. <code>retrowave_4_3</code></p>
+<p>To load this, open Menu -&gt; UI Settings -&gt; Theme Set</p>
+<p>People online say that you can copy themes via the USB drive (just how you copied the games), but this did not work for me. Regardless, they say you should add themes to this folder: <code>retropie/configs/to_retropie/configs/all/emulationstation/themes/</code>. It should exist but create folders if they don't. Then it should show up. </p>
+<p>You can download the <code>simpler-turtlemini</code> from <a href="https://github.com/Omnija/es-theme-simpler-turtlemini">this link</a>.</p>
+<h4 id="9-game-metadata">9) Game Metadata</h4>
+<p>You can download game metadata by going to Menu -&gt; Scraper. You can have it manually choose the first one by deselecting "User Settles on Conflict". </p>
+<h2 id="in-game-config">In-Game Config</h2>
+<h4 id="10-setting-up-rewind">10) Setting up Rewind</h4>
+<p>Rewind is a feature where you can reverse the game and undo your previous moves. To enable it, enter a game. Then open the Quick Menu (Hotkey + X) and turn on Rewind support and configure it. Larger buffer lets you rewind more into the past, and the number of frames changes how fast or sensitive it goes back in time. </p>
+<p>Once it is enabled, press B to enter the Main Menu. Then select Settings -&gt; Input -&gt; Hotkeys. </p>
+<p>I like the following hotkeys: </p>
+<pre><code>Fast-Forward (Toggle): Right trigger
+Rewind: Left trigger
+Load State: Left shoulder
+Save State: Right shoulder
+</code></pre>
+<p>I also like Confirm Quit being on. </p>
+<p>Once you set it as you like, go to the main menu then pick "Configuration File" then select "Save Current Configuration". I have to set my hotkeys once per console, but I know there's a way to set it for all. </p>
+<h2 id="enjoy">Enjoy!</h2>
+<p>Part of the fun of setting up a RetroPie system is the endless tinkering that is possible. Have fun!</p>
 
 
 

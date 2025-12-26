@@ -16,7 +16,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.5">
     
     
       
@@ -338,9 +338,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-edit-your-cmdlinetxt" class="md-nav__link">
+  <a href="#3-enable-the-getty-communication-service-for-usb-serial" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Edit your cmdline.txt:
+      3) Enable the getty communication service for USB serial:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-shut-down-the-pi-and-edit-your-cmdlinetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Shut down the Pi and edit your cmdline.txt:
     </span>
   </a>
   
@@ -393,120 +402,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../motors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Motors
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../startup/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Startup
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../useful_commands/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Useful Commands
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Advice
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Advice
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../advice/grad/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Graduate School
     
   </span>
   
@@ -569,9 +469,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-edit-your-cmdlinetxt" class="md-nav__link">
+  <a href="#3-enable-the-getty-communication-service-for-usb-serial" class="md-nav__link">
     <span class="md-ellipsis">
-      4) Edit your cmdline.txt:
+      3) Enable the getty communication service for USB serial:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-shut-down-the-pi-and-edit-your-cmdlinetxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Shut down the Pi and edit your cmdline.txt:
     </span>
   </a>
   
@@ -615,6 +524,7 @@ One limitation of USB Serial Mode is that you cannot plug in a keyboard and your
 <h2 id="1-disable-gui">1) Disable GUI</h2>
 <p>You can change this in <code>raspi-config</code></p>
 <pre><code class="language-bash">sudo systemctl set-default multi-user.target
+sudo reboot
 </code></pre>
 <p>To reenable GUI on boot, use raspi-config.</p>
 <p>To start the GUI in the CLI, run: </p>
@@ -624,22 +534,18 @@ One limitation of USB Serial Mode is that you cannot plug in a keyboard and your
 <pre><code class="language-bash">sudo systemctl disable systemd-networkd-wait-online.service
 sudo reboot
 </code></pre>
-<h2 id="4-edit-your-cmdlinetxt">4) Edit your <code>cmdline.txt</code>:</h2>
-<p>Run this command to edit your <code>cmdline.txt</code>: </p>
-<pre><code class="language-bash">sudo nano /boot/cmdline.txt
+<h2 id="3-enable-the-getty-communication-service-for-usb-serial">3) Enable the getty communication service for USB serial:</h2>
+<pre><code class="language-bash">sudo systemctl restart serial-getty@ttyGS0.service
 </code></pre>
-<p>NOTE: Newer versions of Raspbian have moved the configuration files <code>cmdline.txt</code> and <code>config.txt</code> to <code>/boot/firmware/</code>.</p>
-<p>Then add this to your <code>cmdline.txt</code> right after the <code>rootwait</code>: </p>
-<pre><code class="language-bash">modules-load=dwc2,g_serial net.ifnames=0 ds=nocloud
+<p>check if it is running with: </p>
+<pre><code class="language-bash">sudo systemctl status serial-getty@ttyGS0.service
 </code></pre>
-<p>Here is your entire cmdline.txt:</p>
+<p>It should say enabled in green. </p>
+<h2 id="4-shut-down-the-pi-and-edit-your-cmdlinetxt">4) Shut down the Pi and edit your <code>cmdline.txt</code>:</h2>
+<p>Change your <code>cmdline.txt</code> to this: </p>
 <pre><code class="language-bash">console=serial0,115200 console=tty1 root=PARTUUID=fc6ea92b-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_serial net.ifnames=0 ds=nocloud cfg80211.ieee80211_regdom=US
 </code></pre>
 <h2 id="5-edit-your-configtxt">5) Edit your <code>config.txt</code></h2>
-<p>Run this command to edit your <code>config.txt</code>:</p>
-<pre><code class="language-bash">sudo nano /boot/config.txt
-</code></pre>
-<p>NOTE: Newer versions of Raspbian have moved the configuration files <code>cmdline.txt</code> and <code>config.txt</code> to <code>/boot/firmware/</code>.</p>
 <p>Add this to the top or bottom of your <code>config.txt</code> and ideally remove the rest of the settings that you don't need. Make sure what you already have in your <code>config.txt</code> does not conflict with this!</p>
 <pre><code class="language-bash"># SETTINGS FOR USB SERIAL OR REGULAR MODE
 # Please enable or disable the other to use a particular mode. 
@@ -658,26 +564,15 @@ framebuffer_height=540
 hdmi_force_hotplug=1
 disable_overscan=1
 </code></pre>
-<p>Once you're finished, just shut down and connect your Pi to your computer via the Data port on the Pi Zero 2W. Serial Mode should be set up already, but if you're having trouble, try connecting your Pi to the network and SSHing into it. </p>
-<p>The getty communication service for USB serial should already be running, but ensure it is with: </p>
-<pre><code class="language-bash">sudo systemctl restart serial-getty@ttyGS0.service
-</code></pre>
-<p>check if it is running with: </p>
-<pre><code class="language-bash">sudo systemctl status serial-getty@ttyGS0.service
-</code></pre>
-<p>It should say enabled in green. </p>
-<h1 id="connecting-to-your-computer">Connecting to your Computer</h1>
-<p>It is actually pretty straightforward on a Mac. On Windows, you will need PuTTY. Use Device Manager to check the name of the device, maybe it will be listed as <code>COM6</code>. Then use PuTTY to connect. Below are the instructions for MacOS:</p>
+<h1 id="connecting-to-your-macbook">Connecting to your Macbook</h1>
+<p>It is actually pretty straightforward on a Mac and a headache on Windows. </p>
 <h2 id="1-plug-the-micro-usb-data-cable-to-the-second-micro-usb-port">1) Plug the Micro USB data cable to the second Micro USB port.</h2>
 <p>Plug this into your Mac. Having a display is optional. </p>
 <h2 id="2-run-the-following-command-on-your-computer-to-see-if-your-computer-recognizes-the-pi">2) Run the following command on your computer to see if your computer recognizes the Pi:</h2>
 <pre><code class="language-bash">ls /dev/cu.usbmodem*
 </code></pre>
-<p>Try also running this command if the above is giving issues: </p>
-<pre><code class="language-bash">ls /dev/*.*
-</code></pre>
 <p>You should see something like this listed: </p>
-<pre><code class="language-bash">(base) root@computer ~ % ls /dev/cu.usbmodem*              
+<pre><code class="language-bash">(base) qayyuma@Ayaans-MacBook-Pro ~ % ls /dev/cu.usbmodem*              
 
 /dev/cu.usbmodem11201
 </code></pre>
@@ -686,43 +581,7 @@ disable_overscan=1
 <p>Make sure to change the numbers to match yours.</p>
 <pre><code class="language-bash">screen /dev/cu.usbmodem2101 115200
 </code></pre>
-<p>You can also use minicom in a very similar way (you have to install it first):</p>
-<pre><code class="language-zsh">minicom --device /dev/cu.usbmodem2101 --baudrate 115200
-</code></pre>
-<p>Now it should ask you to connect. Type in <code>kali</code>, then <code>kali</code> as username and password if you did not change the default username or password. </p>
-<p>Note: If you are getting stuck at actually seeing and interacting with the Pi with Minicom or Screen, try to see if the serial-getty service above is actually running. If it says something along the lines of the following: </p>
-<pre><code class="language-zsh">$ sudo systemctl status serial-getty@ttyGS0.service
-
- serial-getty@ttyGS0.service - Serial Getty on ttyGS0
-     Loaded: loaded (/usr/lib/systemd/system/serial-getty&gt;
-     Active: inactive (dead)
-       Docs: man:agetty(8)
-</code></pre>
-<p>But then says it is working after running this command: </p>
-<pre><code class="language-bash">sudo systemctl restart serial-getty@ttyGS0.service
-</code></pre>
-<p>Try creating a service that auto reactivates the service. Just run these two lines: </p>
-<pre><code class="language-zsh">sudo tee /etc/systemd/system/usb-gadget.service &gt; /dev/null &lt;&lt;'EOF'
-[Unit]
-Description=USB Gadget setup
-Before=serial-getty@ttyGS0.service
-Wants=serial-getty@ttyGS0.service
-DefaultDependencies=no
-After=local-fs.target
-Before=sysinit.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/setup_usb_gadget.sh
-RemainAfterExit=yes
-
-[Install]
-WantedBy=sysinit.target
-EOF
-</code></pre>
-<pre><code class="language-zsh">sudo systemctl enable usb-gadget.service
-</code></pre>
-<p>Now it should just work. </p>
+<p>Now it should ask you to connect. Type in <code>kali</code>, then <code>kali</code> as username and password. </p>
 <h3 id="now-you-are-connected-to-your-pi-via-usb-serial">Now you are connected to your Pi via USB Serial!</h3>
 <p>A major limitation is that you cannot directly control the Pi because the one data port is taken up. You need a USB OTG hub for this to work. In order to undo this and be able to run in "normal" mode where you can plug in the power to the power port and plug in a keyboard like normal, you must change your <code>config.txt</code> to match this snippet: </p>
 <p>USB Serial Mode: </p>
@@ -730,7 +589,7 @@ EOF
 ## Please enable or disable the other to use a particular mode. 
 
 ## ENABLE FOR USB SERIAL
-dtoverlay=dwc2,dr_mode=peripheral
+dtoverlay=dwc2
 start_x=1
 
 ## ENABLE FOR REGULAR MODE
@@ -779,6 +638,11 @@ dr_mode=peripheral
       <div class="md-copyright">
   
   
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
       
     </div>
@@ -794,7 +658,7 @@ dr_mode=peripheral
     <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
     
   </body>
