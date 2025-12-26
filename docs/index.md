@@ -7,3 +7,4 @@ Welcome to my blog! Here I have some useful guides and blogs that you may find u
     - [Pi Guide - Network & Updating](pi-guide/part3.md)
     - [Pi Guide - Useful Commands](pi-guide/useful_commands.md)
     - [Pi Guide - Motor Control](pi-guide/motors.md)
+    - [RetroPie Setup Guide](pi-guide/retropie.md)
