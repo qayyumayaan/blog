@@ -1,5 +1,6 @@
 # RetroPie on Raspberry Pi Guide
 Written by Ayaan Qayyum on 12-25-25
+
 Prerequisites: a computer, Raspberry Pi, and an SD card (at least 32 GB). Ideally a CRT. I will be using a Pi 4 because of the native analog output. 
 
 ## Initial Setup
@@ -93,7 +94,7 @@ You can download game metadata by going to Menu -> Scraper. You can have it manu
 
 ## In-Game Config
 
-#### 10) Setting up Rewind
+#### 10) Setting up Rewind & Hotkeys
 
 Rewind is a feature where you can reverse the game and undo your previous moves. To enable it, enter a game. Then open the Quick Menu (Hotkey + X) and turn on Rewind support and configure it. Larger buffer lets you rewind more into the past, and the number of frames changes how fast or sensitive it goes back in time. 
 
