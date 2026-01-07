@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../motors/">
+      
+      
+        <link rel="next" href="../../grad/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>RetroPie on Raspberry Pi Guide - Ayaan's Blog</title>
+        <title>RetroPie Setup Guide - Ayaan's Blog</title>
       
     
     
@@ -104,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RetroPie on Raspberry Pi Guide
+              RetroPie Setup Guide
             
           </span>
         </div>
@@ -215,17 +219,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -240,7 +246,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Pi Guide
@@ -335,9 +341,259 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../motors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motor Controls
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RetroPie Setup Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RetroPie Setup Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#initial-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initial Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Initial Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-download-the-correct-image-for-your-device-at-this-link-httpsretropieorgukdownload" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) Download the correct image for your device at this link: https://retropie.org.uk/download/
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-flash-the-image-on-the-sd-card-with-balenaetcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Flash the image on the SD card with BalenaEtcher.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-boot-on-the-pi-for-the-first-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Boot on the Pi for the first time.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-set-config-files-for-display-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Set config files for display output.
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emulationstation" class="md-nav__link">
+    <span class="md-ellipsis">
+      EmulationStation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EmulationStation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-add-your-games" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Add your games.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-bluetooth-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Bluetooth Controllers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-network-connectivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Network Connectivity
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-themes" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Themes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-game-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Game Metadata
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#in-game-config" class="md-nav__link">
+    <span class="md-ellipsis">
+      In-Game Config
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="In-Game Config">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#10-setting-up-rewind-hotkeys" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Setting up Rewind &amp; Hotkeys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enjoy" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enjoy!
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../grad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Grad School
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
