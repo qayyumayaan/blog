@@ -4,3 +4,8 @@ This is the source markdown text for my blog. To deploy this to my website, I ju
 mkdocs gh-deploy
 ```
 That's it. 
+
+To preview it locally, run:
+```bash
+mkdocs serve
+```
