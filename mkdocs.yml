@@ -8,3 +8,11 @@ nav:
       - Part 2: pi-guide/part2.md
       - Part 3: pi-guide/part3.md
       - Useful Commands: pi-guide/useful_commands.md
+      - Motor Controls: pi-guide/motors.md
+      - RetroPie Setup Guide: pi-guide/retropie.md
+  - Grad School: grad.md  
+
+extra:
+  analytics:
+    provider: google
+    property: G-XMFVC13WBE 
